@@ -1,0 +1,302 @@
+[
+    {
+        "code": "AC",
+        "name": "AppCode"
+    },
+    {
+        "code": "CC",
+        "name": "CodeCanvas"
+    },
+    {
+        "code": "CL",
+        "name": "CLion"
+    },
+    {
+        "code": "CLN",
+        "name": "CLion Nova"
+    },
+    {
+        "code": "CWML",
+        "name": "Code With Me Lobby"
+    },
+    {
+        "code": "CWMR",
+        "name": "Code With Me Relay"
+    },
+    {
+        "code": "DC",
+        "name": "dotCover"
+    },
+    {
+        "code": "DCCLT",
+        "name": "dotCover Command Line Tools"
+    },
+    {
+        "code": "DG",
+        "name": "DataGrip"
+    },
+    {
+        "code": "DL",
+        "name": "Datalore"
+    },
+    {
+        "code": "DLE",
+        "name": "Datalore Enterprise"
+    },
+    {
+        "code": "DM",
+        "name": "dotMemory"
+    },
+    {
+        "code": "DMCLP",
+        "name": "dotMemory Command Line Profiler"
+    },
+    {
+        "code": "DMU",
+        "name": "dotMemory Unit"
+    },
+    {
+        "code": "DP",
+        "name": "dotTrace"
+    },
+    {
+        "code": "DPCLT",
+        "name": "dotTrace Command Line Tools"
+    },
+    {
+        "code": "DPK",
+        "name": "dotPeek"
+    },
+    {
+        "code": "DPPS",
+        "name": "dotTrace Profiling SDK"
+    },
+    {
+        "code": "DS",
+        "name": "DataSpell"
+    },
+    {
+        "code": "EHS",
+        "name": "ETW Host Service"
+    },
+    {
+        "code": "FL",
+        "name": "Fleet"
+    },
+    {
+        "code": "FLIJ",
+        "name": "Fleet Backend"
+    },
+    {
+        "code": "FLL",
+        "name": "Fleet Launcher"
+    },
+    {
+        "code": "FLS",
+        "name": "Floating License Server"
+    },
+    {
+        "code": "GO",
+        "name": "GoLand"
+    },
+    {
+        "code": "GRZ",
+        "name": "JetBrains Grazie: AI Writing Companion"
+    },
+    {
+        "code": "GW",
+        "name": "Gateway"
+    },
+    {
+        "code": "HB",
+        "name": "Hub"
+    },
+    {
+        "code": "HCC",
+        "name": "HTTP Client CLI"
+    },
+    {
+        "code": "IDES",
+        "name": "IDE Services"
+    },
+    {
+        "code": "IIC",
+        "name": "IntelliJ IDEA Community Edition"
+    },
+    {
+        "code": "IIE",
+        "name": "IntelliJ IDEA Edu"
+    },
+    {
+        "code": "IIU",
+        "name": "IntelliJ IDEA Ultimate"
+    },
+    {
+        "code": "JCD",
+        "name": "JetBrains Clients Downloader"
+    },
+    {
+        "code": "KT",
+        "name": "Kotlin"
+    },
+    {
+        "code": "MF",
+        "name": "Mono Font"
+    },
+    {
+        "code": "MPS",
+        "name": "MPS"
+    },
+    {
+        "code": "MPSIIP",
+        "name": "MPS IntelliJ IDEA plugin"
+    },
+    {
+        "code": "PCC",
+        "name": "PyCharm Community Edition"
+    },
+    {
+        "code": "PCE",
+        "name": "PyCharm Edu"
+    },
+    {
+        "code": "PCP",
+        "name": "PyCharm Professional Edition"
+    },
+    {
+        "code": "PS",
+        "name": "PhpStorm"
+    },
+    {
+        "code": "QA",
+        "name": "Aqua"
+    },
+    {
+        "code": "QDANDC",
+        "name": "Qodana Community for Android"
+    },
+    {
+        "code": "QDCLD",
+        "name": "Qodana Cloud"
+    },
+    {
+        "code": "QDGO",
+        "name": "Qodana for Go"
+    },
+    {
+        "code": "QDJS",
+        "name": "Qodana for JS"
+    },
+    {
+        "code": "QDJVM",
+        "name": "Qodana for JVM"
+    },
+    {
+        "code": "QDJVMC",
+        "name": "Qodana Community for JVM"
+    },
+    {
+        "code": "QDNET",
+        "name": "Qodana for .NET"
+    },
+    {
+        "code": "QDPHP",
+        "name": "Qodana for PHP"
+    },
+    {
+        "code": "QDPY",
+        "name": "Qodana for Python"
+    },
+    {
+        "code": "QDPYC",
+        "name": "Qodana Community for Python"
+    },
+    {
+        "code": "RC",
+        "name": "ReSharper C++"
+    },
+    {
+        "code": "RD",
+        "name": "Rider"
+    },
+    {
+        "code": "RDCPPP",
+        "name": "Rider for Unreal Engine"
+    },
+    {
+        "code": "RFU",
+        "name": "RiderFlow for Unity"
+    },
+    {
+        "code": "RM",
+        "name": "RubyMine"
+    },
+    {
+        "code": "RR",
+        "name": "RustRover"
+    },
+    {
+        "code": "RRD",
+        "name": "Rider Remote Debugger"
+    },
+    {
+        "code": "RS",
+        "name": "ReSharper"
+    },
+    {
+        "code": "RSCHB",
+        "name": "ReSharper Checked builds"
+    },
+    {
+        "code": "RSCLT",
+        "name": "ReSharper Command Line Tools"
+    },
+    {
+        "code": "RSU",
+        "name": "ReSharper Tools"
+    },
+    {
+        "code": "SP",
+        "name": "Space Cloud"
+    },
+    {
+        "code": "SPA",
+        "name": "Space Desktop"
+    },
+    {
+        "code": "SPP",
+        "name": "Space On-Premises"
+    },
+    {
+        "code": "TBA",
+        "name": "Toolbox App"
+    },
+    {
+        "code": "TC",
+        "name": "TeamCity"
+    },
+    {
+        "code": "TCC",
+        "name": "TeamCity Cloud"
+    },
+    {
+        "code": "US",
+        "name": "Upsource"
+    },
+    {
+        "code": "WRS",
+        "name": "Writerside"
+    },
+    {
+        "code": "WS",
+        "name": "WebStorm"
+    },
+    {
+        "code": "YTD",
+        "name": "YouTrack"
+    },
+    {
+        "code": "YTWE",
+        "name": "Youtrack Workflow Editor"
+    }
+]
