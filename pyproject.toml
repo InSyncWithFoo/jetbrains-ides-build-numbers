@@ -1,0 +1,21 @@
+[project]
+name = "jetbrains-ides-build-numbers"
+version = "0.0.0"
+description = "JetBrains IDEs' build numbers"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [
+	{ name = "InSyncWithFoo", email = "insyncwithfoo@gmail.com" }
+]
+dependencies = [
+    "pandas>=2.2.3",
+    "pydantic>=2.10.4",
+    "requests>=2.32.3",
+    "tabulate>=0.9.0",
+]
+
+[dependency-groups]
+dev = [
+    "pandas-stubs>=2.2.3.241126",
+]

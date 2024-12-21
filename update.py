@@ -1,0 +1,162 @@
+from __future__ import annotations
+
+from datetime import datetime  # noqa: TC003
+import json
+from enum import StrEnum
+from pathlib import Path
+import textwrap
+from typing import Self, final, TYPE_CHECKING
+
+import requests
+from pandas import DataFrame
+from pydantic import BaseModel
+
+if TYPE_CHECKING:
+	from collections.abc import Iterator
+
+
+type Version = str
+type BuildNumber = str
+
+
+class IDECode(StrEnum):
+	CL = 'CLion'
+	GO = 'GoLand'
+	IIC = 'IntelliJ IDEA Community Edition'
+	IIU = 'IntelliJ IDEA Ultimate'
+	PCC = 'PyCharm Community Edition'
+	PCP = 'PyCharm Professional Edition'
+	PS = 'PhpStorm'
+	RC = 'ReSharper C++'
+	RD = 'Rider'
+	RM = 'RubyMine'
+	RS = 'ReSharper'
+	WS = 'WebStorm'
+	
+	@classmethod
+	def get(cls, member: str) -> Self | None:
+		try:
+			return cls[member]
+		except KeyError:
+			return None
+
+
+@final
+class Release(BaseModel):
+	version: Version
+	build: BuildNumber | None
+	date: datetime
+
+
+class Product(BaseModel):
+	code: str
+	name: str
+	releases: list[Release]
+
+
+class IDEList(list[Product]):
+	
+	@property
+	def releases(self) -> Iterator[tuple[IDECode, Release]]:
+		yield from (
+			(IDECode[ide.code], release)
+			for ide in self
+			for release in ide.releases
+		)
+
+
+def _retrieve_product_list() -> list[Product]:
+	endpoint = 'https://data.services.jetbrains.com/products?release.type=release'
+	one_minute = 60.0
+	
+	response = requests.get(endpoint, timeout = one_minute)
+	
+	return [Product(**element) for element in response.json()]
+
+
+def _update_all_codes(products: list[Product]) -> None:
+	path = Path(__file__).parent / 'all-product-codes.json'
+	
+	codes_and_names = [
+		{'code': product.code, 'name': product.name}
+		for product in products
+	]
+	codes_and_names.sort(key = lambda product: product['code'])
+	
+	with path.open('w') as file:
+		json.dump(codes_and_names, file, indent = 4)
+
+
+def _map_version_to_build_numbers(ides: IDEList) -> dict[Version, dict[IDECode, BuildNumber | None]]:
+	table: dict[Version, dict[IDECode, BuildNumber | None]] = {}
+	
+	for (code, release) in ides.releases:
+		version, build = release.version, release.build
+		
+		if build is None:
+			continue
+		
+		if version not in table:
+			table[version] = {}
+		
+		table[version][code] = build
+	
+	return table
+
+
+def _construct_ide_table(ides: IDEList) -> DataFrame:
+	columns = ["Version", *IDECode.__members__]
+	table = DataFrame({column: [] for column in columns})
+	
+	version_to_build_numbers = _map_version_to_build_numbers(ides)
+	
+	for index, (version, codes_to_build_numbers) in enumerate(version_to_build_numbers.items()):
+		build_numbers = [codes_to_build_numbers.get(code) for code in IDECode.__members__.values()]
+		
+		table.loc[index] = [version, *build_numbers]
+	
+	return table
+
+
+def _table_notes() -> str:
+	items: list[str] = []
+	
+	for code, member in IDECode.__members__.items():
+		name = member.value
+		item = f'<b>{code}</b>: {name}'
+		
+		items.append('&nbsp;'.join(item.split()))
+	
+	return ' | '.join(items)
+
+
+def _update_table(ides: IDEList) -> None:
+	table = _construct_ide_table(ides).to_markdown(index = False, stralign = 'left')
+	
+	new_content = textwrap.dedent('''
+        # Build numbers
+
+        {notes}
+
+        {table}
+    ''')
+	
+	path = Path(__file__).parent / 'build-numbers.md'
+	
+	with path.open('w') as file:
+		file.write(new_content.format(table = table, notes = _table_notes()).lstrip())
+
+
+def main() -> None:
+	products = _retrieve_product_list()
+	ides = IDEList([
+		product for product in products
+		if IDECode.get(product.code) is not None
+	])
+	
+	_update_all_codes(products)
+	_update_table(ides)
+
+
+if __name__ == '__main__':
+	main()
