@@ -1,13 +1,14 @@
 from __future__ import annotations
 
-from datetime import datetime  # noqa: TC003
 import json
+import textwrap
+from datetime import datetime  # noqa: TC003
 from enum import StrEnum
 from pathlib import Path
-import textwrap
-from typing import Self, final, TYPE_CHECKING
+from typing import TYPE_CHECKING, Self, final
 
 import requests
+from packaging.version import Version
 from pandas import DataFrame
 from pydantic import BaseModel
 
@@ -15,7 +16,7 @@ if TYPE_CHECKING:
 	from collections.abc import Iterator
 
 
-type Version = str
+type RawVersion = str
 type BuildNumber = str
 
 
@@ -43,7 +44,7 @@ class IDECode(StrEnum):
 
 @final
 class Release(BaseModel):
-	version: Version
+	version: RawVersion
 	build: BuildNumber | None
 	date: datetime
 
@@ -87,10 +88,10 @@ def _update_all_codes(products: list[Product]) -> None:
 		json.dump(codes_and_names, file, indent = 4)
 
 
-def _map_version_to_build_numbers(ides: IDEList) -> dict[Version, dict[IDECode, BuildNumber | None]]:
-	table: dict[Version, dict[IDECode, BuildNumber | None]] = {}
+def _map_version_to_build_numbers(ides: IDEList) -> dict[RawVersion, dict[IDECode, BuildNumber | None]]:
+	table: dict[RawVersion, dict[IDECode, BuildNumber | None]] = {}
 	
-	for (code, release) in ides.releases:
+	for code, release in ides.releases:
 		version, build = release.version, release.build
 		
 		if build is None:
@@ -101,11 +102,13 @@ def _map_version_to_build_numbers(ides: IDEList) -> dict[Version, dict[IDECode, 
 		
 		table[version][code] = build
 	
-	return table
+	sorted_items = sorted(table.items(), key=lambda item: Version(item[0]))
+	
+	return dict(reversed(sorted_items))
 
 
 def _construct_ide_table(ides: IDEList) -> DataFrame:
-	columns = ["Version", *IDECode.__members__]
+	columns = ['Version', *IDECode.__members__]
 	table = DataFrame({column: [] for column in columns})
 	
 	version_to_build_numbers = _map_version_to_build_numbers(ides)

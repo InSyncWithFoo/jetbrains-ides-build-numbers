@@ -9,6 +9,7 @@ authors = [
 	{ name = "InSyncWithFoo", email = "insyncwithfoo@gmail.com" }
 ]
 dependencies = [
+    "packaging>=24.2",
     "pandas>=2.2.3",
     "pydantic>=2.10.4",
     "requests>=2.32.3",
