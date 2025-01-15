@@ -102,9 +102,9 @@ def _map_version_to_build_numbers(ides: IDEList) -> dict[RawVersion, dict[IDECod
 		
 		table[version][code] = build
 	
-	sorted_items = sorted(table.items(), key=lambda item: Version(item[0]))
+	sorted_items = sorted(table.items(), reverse = True, key = lambda item: Version(item[0]))
 	
-	return dict(reversed(sorted_items))
+	return dict(sorted_items)
 
 
 def _construct_ide_table(ides: IDEList) -> DataFrame:
