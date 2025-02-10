@@ -124,10 +124,6 @@
         "name": "IntelliJ IDEA Community Edition"
     },
     {
-        "code": "IIE",
-        "name": "IntelliJ IDEA Edu"
-    },
-    {
         "code": "IIU",
         "name": "IntelliJ IDEA Ultimate"
     },
@@ -154,10 +150,6 @@
     {
         "code": "PCC",
         "name": "PyCharm Community Edition"
-    },
-    {
-        "code": "PCE",
-        "name": "PyCharm Edu"
     },
     {
         "code": "PCP",
