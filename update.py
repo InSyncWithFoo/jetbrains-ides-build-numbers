@@ -31,6 +31,7 @@ class IDECode(StrEnum):
 	RC = 'ReSharper C++'
 	RD = 'Rider'
 	RM = 'RubyMine'
+	RR = 'RustRover'
 	RS = 'ReSharper'
 	WS = 'WebStorm'
 	
