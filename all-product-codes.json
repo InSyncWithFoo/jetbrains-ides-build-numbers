@@ -280,6 +280,14 @@
         "name": "Upsource"
     },
     {
+        "code": "VSCAI",
+        "name": "JetBrains AI Assistant for Visual Studio Code"
+    },
+    {
+        "code": "VSCRS",
+        "name": "ReShaper for Visual Studio Code"
+    },
+    {
         "code": "WRS",
         "name": "Writerside"
     },
