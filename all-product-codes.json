@@ -4,6 +4,10 @@
         "name": "AppCode"
     },
     {
+        "code": "AIR",
+        "name": "Air"
+    },
+    {
         "code": "CC",
         "name": "CodeCanvas"
     },
