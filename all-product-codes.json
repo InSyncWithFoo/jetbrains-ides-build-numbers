@@ -176,10 +176,6 @@
         "name": "PhpStorm"
     },
     {
-        "code": "QA",
-        "name": "Aqua"
-    },
-    {
         "code": "QDANDC",
         "name": "Qodana Community for Android"
     },
@@ -226,10 +222,6 @@
     {
         "code": "RD",
         "name": "Rider"
-    },
-    {
-        "code": "RDCPPP",
-        "name": "Rider for Unreal Engine"
     },
     {
         "code": "RFU",
@@ -288,20 +280,12 @@
         "name": "TeamCity Cloud"
     },
     {
-        "code": "US",
-        "name": "Upsource"
-    },
-    {
         "code": "VSCAI",
         "name": "JetBrains AI Assistant for Visual Studio Code"
     },
     {
         "code": "VSCRS",
         "name": "ReSharper for Visual Studio Code"
-    },
-    {
-        "code": "WRS",
-        "name": "Writerside"
     },
     {
         "code": "WS",
