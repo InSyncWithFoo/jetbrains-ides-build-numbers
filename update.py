@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import json
 import textwrap
-from datetime import datetime  # noqa: TC003
+from collections import defaultdict
+from datetime import date  # noqa: TC003
 from enum import StrEnum
 from pathlib import Path
 from typing import TYPE_CHECKING, Self, final
@@ -47,7 +48,7 @@ class IDECode(StrEnum):
 class Release(BaseModel):
 	version: RawVersion
 	build: BuildNumber | None
-	date: datetime
+	date: date
 
 
 class Product(BaseModel):
@@ -138,17 +139,29 @@ def _update_table(ides: IDEList) -> None:
 	table = _construct_ide_table(ides).to_markdown(index = False, stralign = 'left')
 	
 	new_content = textwrap.dedent('''
-        # Build numbers
+		# Build numbers
 
-        {notes}
+		{notes}
 
-        {table}
-    ''')
+		{table}
+	''')
 	
 	path = Path(__file__).parent / 'build-numbers.md'
 	
 	with path.open('w') as file:
 		file.write(new_content.format(table = table, notes = _table_notes()).lstrip())
+
+
+def _update_json(ides: IDEList) -> None:
+	path = Path(__file__).parent / 'builds.json'
+	code_to_releases: dict[IDECode, list[Release]] = defaultdict(list)
+	
+	for code, release in ides.releases:
+		release_as_json = release.model_dump_json()
+		code_to_releases[code].append(json.loads(release_as_json))
+	
+	with path.open('w') as file:
+		json.dump(code_to_releases, file, separators = (',', ':'))
 
 
 def main() -> None:
@@ -160,6 +173,7 @@ def main() -> None:
 	
 	_update_all_codes(products)
 	_update_table(ides)
+	_update_json(ides)
 
 
 if __name__ == '__main__':
