@@ -158,7 +158,7 @@ def _update_json(ides: IDEList) -> None:
 	
 	for code, release in ides.releases:
 		release_as_json = release.model_dump_json()
-		code_to_releases[code].append(json.loads(release_as_json))
+		code_to_releases[code.name].append(json.loads(release_as_json))
 	
 	with path.open('w') as file:
 		json.dump(code_to_releases, file, separators = (',', ':'))
