@@ -288,6 +288,10 @@
         "name": "ReSharper for Visual Studio Code"
     },
     {
+        "code": "VSCRSB",
+        "name": "ReSharper Backend for Visual Studio Code"
+    },
+    {
         "code": "WS",
         "name": "WebStorm"
     },
