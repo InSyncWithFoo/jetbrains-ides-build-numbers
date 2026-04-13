@@ -18,5 +18,5 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pandas-stubs>=2.2.3.241126",
+    "pandas-stubs>=3.0.0.260204",
 ]
