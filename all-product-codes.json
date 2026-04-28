@@ -144,6 +144,10 @@
         "name": "JetBrains Clients Downloader"
     },
     {
+        "code": "JCP",
+        "name": "JetBrains Central"
+    },
+    {
         "code": "KT",
         "name": "Kotlin"
     },
