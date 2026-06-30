@@ -136,7 +136,9 @@ def _table_notes() -> str:
 
 
 def _update_table(ides: IDEList) -> None:
-	table = _construct_ide_table(ides).to_markdown(index = False, stralign = 'left')
+	table = _construct_ide_table(ides) \
+		.fillna('') \
+		.to_markdown(index = False, stralign = 'left')
 	
 	new_content = textwrap.dedent('''
 		# Build numbers
@@ -154,7 +156,7 @@ def _update_table(ides: IDEList) -> None:
 
 def _update_json(ides: IDEList) -> None:
 	path = Path(__file__).parent / 'builds.json'
-	code_to_releases: dict[IDECode, list[Release]] = defaultdict(list)
+	code_to_releases: dict[str, list[Release]] = defaultdict(list)
 	
 	for code, release in ides.releases:
 		release_as_json = release.model_dump_json()
