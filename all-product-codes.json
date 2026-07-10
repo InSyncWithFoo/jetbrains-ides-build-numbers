@@ -140,6 +140,10 @@
         "name": "IJ Devcontainers CLI tool"
     },
     {
+        "code": "JBA",
+        "name": "JetBrains Account"
+    },
+    {
         "code": "JCD",
         "name": "JetBrains Clients Downloader"
     },
