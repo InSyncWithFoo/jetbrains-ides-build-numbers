@@ -184,6 +184,10 @@
         "name": "PhpStorm"
     },
     {
+        "code": "PSL",
+        "name": "PhpStorm Light"
+    },
+    {
         "code": "QDANDC",
         "name": "Qodana Community for Android"
     },
