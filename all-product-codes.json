@@ -140,6 +140,14 @@
         "name": "IJ Devcontainers CLI tool"
     },
     {
+        "code": "ILSIJS",
+        "name": "IntelliJ Server Java"
+    },
+    {
+        "code": "ILSKS",
+        "name": "Kotlin Server"
+    },
+    {
         "code": "JBA",
         "name": "JetBrains Account"
     },
