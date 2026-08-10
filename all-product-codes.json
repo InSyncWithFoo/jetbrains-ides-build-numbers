@@ -160,6 +160,10 @@
         "name": "JetBrains Central"
     },
     {
+        "code": "JCPCLI",
+        "name": "JetBrains Central CLI"
+    },
+    {
         "code": "KT",
         "name": "Kotlin"
     },
