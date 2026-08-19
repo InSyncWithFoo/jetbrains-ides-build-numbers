@@ -156,6 +156,10 @@
         "name": "JetBrains Account"
     },
     {
+        "code": "JBC",
+        "name": "JetBrains Context"
+    },
+    {
         "code": "JCD",
         "name": "JetBrains Clients Downloader"
     },
