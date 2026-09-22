@@ -84,10 +84,6 @@
         "name": "ETW Host Service"
     },
     {
-        "code": "FL",
-        "name": "Fleet"
-    },
-    {
         "code": "FLIJ",
         "name": "Fleet Backend"
     },
