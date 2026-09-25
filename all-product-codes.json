@@ -8,6 +8,10 @@
         "name": "Air"
     },
     {
+        "code": "AIRGW",
+        "name": "Air Gateway"
+    },
+    {
         "code": "CC",
         "name": "CodeCanvas"
     },
@@ -162,10 +166,6 @@
     {
         "code": "JCP",
         "name": "JetBrains Central"
-    },
-    {
-        "code": "JCPCLI",
-        "name": "JetBrains Central CLI"
     },
     {
         "code": "KT",
