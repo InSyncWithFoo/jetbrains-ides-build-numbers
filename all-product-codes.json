@@ -88,14 +88,6 @@
         "name": "ETW Host Service"
     },
     {
-        "code": "FLIJ",
-        "name": "Fleet Backend"
-    },
-    {
-        "code": "FLL",
-        "name": "Fleet Launcher"
-    },
-    {
         "code": "FLS",
         "name": "Floating License Server"
     },
