@@ -116,6 +116,10 @@
         "name": "HTTP Client CLI"
     },
     {
+        "code": "IDECLI",
+        "name": "IDE CLI"
+    },
+    {
         "code": "IDES",
         "name": "IDE Services"
     },
