@@ -12,6 +12,14 @@
         "name": "Air Gateway"
     },
     {
+        "code": "AIRMA",
+        "name": "Air Mobile for Android"
+    },
+    {
+        "code": "AIRMI",
+        "name": "Air Mobile for iOS"
+    },
+    {
         "code": "CC",
         "name": "CodeCanvas"
     },
