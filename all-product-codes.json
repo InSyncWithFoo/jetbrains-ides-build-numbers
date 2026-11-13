@@ -8,8 +8,8 @@
         "name": "Air"
     },
     {
-        "code": "AIRGW",
-        "name": "Air Gateway"
+        "code": "AIRCLI",
+        "name": "Air CLI"
     },
     {
         "code": "AIRMA",
